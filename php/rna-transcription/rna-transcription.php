@@ -1,6 +1,6 @@
 <?php
 
-function dnaToDna($nucleotide)
+function dnaToRna($nucleotide)
 {
     $rna = [
         'G' => 'C',
@@ -17,7 +17,7 @@ function toRna(String $input_dna)
 
     $dna = str_split($input_dna);
 
-    $result = array_map("dnaToDna", $dna);
+    $result = array_map("dnaToRna", $dna);
     
     return implode("", $result);
 }
