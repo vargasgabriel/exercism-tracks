@@ -12,16 +12,8 @@ class Hamming
 
     first_dna_strand = first_dna_strand.chars
     second_dna_strand = second_dna_strand.chars
-    amount_mutations = 0
 
-    first_dna_strand.zip(second_dna_strand).each do | first_nucleic, second_nucleic |
-      if first_nucleic != second_nucleic then
-        amount_mutations = amount_mutations + 1
-      end
-    end
-
-    return amount_mutations
-    
+    return first_dna_strand.zip(second_dna_strand).count { |a, b| a != b }
   end
 
 end
