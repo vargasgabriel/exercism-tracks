@@ -14,7 +14,7 @@ class ResistorColorDuo {
   ];
   
   int value(List<String> colors) {
-    return int.parse('${colorCode(colors[0])}${colorCode(colors[1])}');
+    return int.parse([colorCode(colors[0]), colorCode(colors[1])].join());
   }
 
   int colorCode(String color) {
