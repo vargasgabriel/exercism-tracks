@@ -1,3 +1,3 @@
-String twoFer([String name]) {
-  return 'One for ${name ?? 'you'}, one for me.';
+String twoFer([String name = 'you']) {
+  return 'One for $name, one for me.';
 }
