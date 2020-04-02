@@ -11,13 +11,11 @@ Map<String, int> _points = {
 int score(String word) {
   List<String> letters = word.split('');
 
-  int score = 0;
-  for (String letter in letters) {
+  return letters.fold(0, (int score, letter) {
     String normalizeLetter = letter.toUpperCase();
     if (_points.containsKey(normalizeLetter)) {
-      score += _points[normalizeLetter.toUpperCase()];
+      score += _points[normalizeLetter];
     }
-  }
-
-  return score;
+    return score;
+  });
 }
