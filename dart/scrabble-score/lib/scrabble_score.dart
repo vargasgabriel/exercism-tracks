@@ -9,13 +9,9 @@ Map<String, int> _points = {
   };
 
 int score(String word) {
-  List<String> letters = word.split('');
-
-  return letters.fold(0, (int score, letter) {
-    String normalizeLetter = letter.toUpperCase();
-    if (_points.containsKey(normalizeLetter)) {
-      score += _points[normalizeLetter];
-    }
-    return score;
-  });
+  return word.toUpperCase()
+           .split('')
+           .where((letter) => _points.containsKey(letter))
+           .map((letter) => _points[letter])
+           .fold(0, (int score, value) => score + value);
 }
